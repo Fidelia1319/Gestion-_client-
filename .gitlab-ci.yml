@@ -13,6 +13,7 @@ test:
   script:
     - echo "Trying to access the remote dir"
     - cd "$REMOTE_DIR" || exit 1
+    - git remote -v
     - echo "Contents of $REMOTE_DIR :"
     - ls -la
     - echo "Local test succeed"
