@@ -1,0 +1,20 @@
+stages:
+  - test
+
+variables: 
+  DOCKER_TLS_CERTDIR: ''
+  REMOTE_DIR: /mnt/project/java-frontend
+
+test: 
+  stage: test
+  image: alpine:latest
+  tags:
+    - java-frontend
+  script:
+    - echo "Trying to access the remote dir"
+    - cd "$REMOTE_DIR" || exit 1
+    - echo "Contents of $REMOTE_DIR :"
+    - ls -la
+    - echo "Local test succeed"
+  only:
+    - main
