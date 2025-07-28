@@ -10,10 +10,6 @@ test:
   image: alpine:latest
   tags:
     - java-frontend
-  before_script:
-    - apk update && apk add git openssh
-    - git --version
-    - git config --global --add safe.directory "$REMOTE_DIR"
   script:
     - echo "Trying to access the remote dir"
     - cd "$REMOTE_DIR" || exit 1
@@ -21,8 +17,5 @@ test:
     - echo "Contents of $REMOTE_DIR :"
     - ls -la
     - echo "Local test succeed"
-    - echo "Pulling latest changes"
-    - git pull origin main
   only:
     - main
-
