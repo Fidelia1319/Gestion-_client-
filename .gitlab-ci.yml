@@ -10,6 +10,9 @@ test:
   image: alpine:latest
   tags:
     - java-frontend
+  before_script:
+    - apk update && apk add git
+    - git --version
   script:
     - echo "Trying to access the remote dir"
     - cd "$REMOTE_DIR" || exit 1
