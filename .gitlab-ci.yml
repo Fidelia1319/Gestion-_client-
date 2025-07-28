@@ -18,3 +18,4 @@ test:
     - echo "Local test succeed"
   only:
     - main
+
