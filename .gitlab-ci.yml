@@ -21,6 +21,8 @@ test:
     - echo "Contents of $REMOTE_DIR :"
     - ls -la
     - echo "Local test succeed"
+    - echo "Pulling latest changes"
+    - git pull origin main
   only:
     - main
 
