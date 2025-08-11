@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+
+    <!-- transaction-type="RESOURCE_LOCAL" car c'est notre application
+         (et non le serveur) qui gérera les transactions -->
+    <persistence-unit name="gestClient-pu" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.projetjava.webappgestoinclients.entity.Client</class>
+        <!-- (Ajoutez d'autres classes entité ici à l'avenir) -->
+
+        <properties>
+            <!-- Propriétés de connexion à la base de données MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gestclient_db"/>
+            <!-- ATTENTION : Modifiez le nom d'utilisateur et le mot de passe -->
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/> <!-- Mettez votre mot de passe XAMPP ici, souvent vide par défaut -->
+
+            <!-- Propriétés d'Hibernate -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,36 @@
+# Fichiers générés par Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Fichiers de log
+*.log
+
+# Fichiers d'IDE
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Fichiers compilés divers
+*.class
+*.war
+*.ear
+
+# Fichiers temporaires de certains éditeurs
+*~
+*.swp
